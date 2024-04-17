@@ -22,7 +22,7 @@
 
     <!-- Modal -->
     <div class="my-modal" v-if="isModalShowing">
-        <div class="card" style="width:18rem;">
+        <div class="card " style="width:18rem;">
              <img :src="activeModal.poster" class="card-img-top" alt="...">
              <div class="card-body">
                <h5 class="card-title">{{activeModal.title}}</h5>
@@ -38,7 +38,7 @@
         <div class="container my-4">
             <div class="row g-4">
                 <div v-for="(record, index) in recordsArray" class="col-4">
-                    <div class="card" @click="handleModal(index)" style="width:18rem;">
+                    <div class="card h-100" @click="handleModal(index)" style="width:18rem;">
                       <img :src="record.poster" class="card-img-top" alt="...">
                       <div class="card-body">
                         <h5 class="card-title">{{record.title}}</h5>
