@@ -3,7 +3,16 @@ createApp({
   data() {
     return {
       recordsArray: [],
+      isModalShowing: false,
+      activeModal: null,
     };
+  },
+
+  methods: {
+    handleModal(index) {
+      this.isModalShowing = true;
+      this.activeModal = this.recordsArray[index];
+    },
   },
 
   mounted() {

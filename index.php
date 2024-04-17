@@ -15,10 +15,30 @@
 </head>
 <body>
     <div id="app">
+        <!-- Modal Overlay -->
+    <div v-if="isModalShowing" class="overlay">
+
+    </div>
+
+    <!-- Modal -->
+    <div class="my-modal" v-if="isModalShowing">
+        <div class="card" style="width:18rem;">
+             <img :src="activeModal.poster" class="card-img-top" alt="...">
+             <div class="card-body">
+               <h5 class="card-title">{{activeModal.title}}</h5>
+               <h6 class="card-subtitle mb-2 text-muted ">{{activeModal.author}}</h6>
+               <p class="card-text">{{activeModal.year}}</p>
+               <button class="close-btn btn btn-danger" @click="isModalShowing = false">
+                Close
+                </button>
+              </div>
+        </div>
+    </div>
+
         <div class="container my-4">
             <div class="row g-4">
-                <div v-for="record in recordsArray" class="col-4">
-                    <div class="card" style="width:18rem;">
+                <div v-for="(record, index) in recordsArray" class="col-4">
+                    <div class="card" @click="handleModal(index)" style="width:18rem;">
                       <img :src="record.poster" class="card-img-top" alt="...">
                       <div class="card-body">
                         <h5 class="card-title">{{record.title}}</h5>
