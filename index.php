@@ -15,6 +15,21 @@
 </head>
 <body>
     <div id="app">
+        <div class="container my-4">
+            <div class="row g-4">
+                <div v-for="record in recordsArray" class="col-4">
+                    <div class="card" style="width:18rem;">
+                      <img :src="record.poster" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">{{record.title}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted ">{{record.author}}</h6>
+                        <p class="card-text">{{record.year}}</p>
+                    
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
     <!-- Axios -->
